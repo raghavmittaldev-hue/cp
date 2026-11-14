@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MarkBook</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="inner">
+      <h1>MarkBook</h1>
+      <p>Enter each student's marks out of 20. Every subject gets a grade point, and CGPA is the average of them. Students are listed from highest to lowest CGPA.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="form-h">
+      <h2 id="form-h">Add student</h2>
+      <form id="student-form">
+        <div class="ident">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" maxlength="80" required autocomplete="off">
+          </div>
+          <div>
+            <label for="roll">Roll number</label>
+            <input id="roll" maxlength="30" required autocomplete="off">
+          </div>
+        </div>
+        <div id="mark-fields" class="mark-fields"></div>
+        <div class="actions">
+          <button type="submit" id="submit" class="primary">Add student</button>
+          <button type="button" id="cancel" class="secondary" hidden>Cancel edit</button>
+        </div>
+        <p id="form-error" class="error" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="results-h">
+      <h2 id="results-h">Results</h2>
+      <p id="empty" class="empty" hidden>No students yet. Add one above.</p>
+      <div class="table-wrap">
+        <table id="results" class="grid" hidden></table>
+      </div>
+    </section>
+
+    <details class="panel scheme">
+      <summary>Grading scheme</summary>
+      <div class="table-wrap"><table id="scheme" class="grid"></table></div>
+      <p class="empty">Minimum marks out of 20 for each grade point. These are the out-of-100 cutoffs divided by 5.</p>
+    </details>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
